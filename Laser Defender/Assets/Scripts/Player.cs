@@ -26,8 +26,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
-        Fire();
-        
+        Fire();        
     }    
    
     private void Fire()
