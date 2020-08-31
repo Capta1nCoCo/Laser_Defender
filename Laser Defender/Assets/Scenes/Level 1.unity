@@ -309,6 +309,10 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 6723371125708034707}
+    - target: {fileID: 842680616439481595, guid: dc98ce3273490c14f84b17c1c5b0d77c, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3428421667863700833, guid: dc98ce3273490c14f84b17c1c5b0d77c, type: 3}
       propertyPath: m_Name
       value: Enemy
