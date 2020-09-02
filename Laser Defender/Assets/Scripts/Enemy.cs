@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float maxTimeBetweenShots = 3f;
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float projectileSpeed = 10f;
+    [SerializeField] ParticleSystem explosionPrefab;
 
 
     // Start is called before the first frame update
@@ -62,6 +63,8 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+        ParticleSystem vfx = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        vfx.Play();
     }
 
 }
