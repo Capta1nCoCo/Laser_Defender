@@ -63,6 +63,7 @@ public class Player : MonoBehaviour
         vfx.Play();
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, volumeDeathSFX);
+        FindObjectOfType<SceneLoader>().LoadGameOver();
     }
 
     private void Fire()
