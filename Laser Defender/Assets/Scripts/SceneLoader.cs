@@ -19,8 +19,10 @@ public class SceneLoader : MonoBehaviour
     }
 
     public void LoadGameScene()
-    {
+    {        
         SceneManager.LoadScene("Level 1");
+        if (FindObjectOfType<GameSession>() == null) { return; }
+        FindObjectOfType<GameSession>().ResetGame();
     }
 
     public void LoadStartMenu()
