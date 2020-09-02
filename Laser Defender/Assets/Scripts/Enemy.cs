@@ -13,10 +13,9 @@ public class Enemy : MonoBehaviour
 
     [Header("Shooting")]
     [SerializeField] GameObject projectilePrefab;
-    [SerializeField] float projectileSpeed = 10f;
-    [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.2f;
-    [SerializeField] float maxTimeBetweenShots = 3f;
+    [SerializeField] float maxTimeBetweenShots = 3f;    
+    [SerializeField] float projectileSpeed = 10f;
 
     [Header("Effects")]
     [SerializeField] ParticleSystem explosionPrefab;
@@ -24,6 +23,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] AudioClip deathSFX;
     [Range(0f, 1f)] [SerializeField] float volumeShootSFX = 0.5f;
     [Range(0f, 1f)] [SerializeField] float volumeDeathSFX = 0.75f;
+
+    float shotCounter;
 
     void Start()
     {
