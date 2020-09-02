@@ -6,22 +6,28 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Enemy")]
     [SerializeField] float health = 100;
     [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.2f;
     [SerializeField] float maxTimeBetweenShots = 3f;
+
+    [Header("Projectile")]
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float projectileSpeed = 10f;
+
+    [Header("Effects")]
     [SerializeField] ParticleSystem explosionPrefab;
+    [SerializeField] AudioClip shootSFX;    
+    [SerializeField] AudioClip deathSFX;
+    [Range(0f, 1f)] [SerializeField] float volumeShootSFX = 0.5f;
+    [Range(0f, 1f)] [SerializeField] float volumeDeathSFX = 0.75f;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         shotCounter = UnityEngine.Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
     }
 
-    // Update is called once per frame
     void Update()
     {
         CountDownAndShoot();
@@ -41,6 +47,7 @@ public class Enemy : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
         projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
+        AudioSource.PlayClipAtPoint(shootSFX, Camera.main.transform.position, volumeShootSFX);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -61,10 +68,11 @@ public class Enemy : MonoBehaviour
     }
 
     private void Die()
-    {
+    {        
         Destroy(gameObject);
         ParticleSystem vfx = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        vfx.Play();
+        AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, volumeDeathSFX);
+        vfx.Play();        
     }
 
 }

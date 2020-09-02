@@ -5010,7 +5010,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8226582264382319951, guid: e4cc4195df0257e43b78ac8b50bffdc0, type: 3}
       propertyPath: m_Name
-      value: Shredder (1)
+      value: Shredder Bottom
       objectReference: {fileID: 0}
     - target: {fileID: 8226582264382319986, guid: e4cc4195df0257e43b78ac8b50bffdc0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5075,7 +5075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1725556321
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -10368,6 +10368,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8211059871626473043, guid: 75c505032b6dc1048a227f027e471fda, type: 3}
+      propertyPath: volumeSFX
+      value: 0.508
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75c505032b6dc1048a227f027e471fda, type: 3}
 --- !u!1001 &8226582264527063186
@@ -10379,7 +10383,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8226582264382319951, guid: e4cc4195df0257e43b78ac8b50bffdc0, type: 3}
       propertyPath: m_Name
-      value: Shredder
+      value: Shredder Top
       objectReference: {fileID: 0}
     - target: {fileID: 8226582264382319986, guid: e4cc4195df0257e43b78ac8b50bffdc0, type: 3}
       propertyPath: m_LocalPosition.x

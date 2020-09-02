@@ -9,11 +9,18 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 0.5f;
     [SerializeField] int health = 200;
-    
+
     [Header("Projectile")]
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.5f;
+
+    [Header("Effects")]
+    [SerializeField] ParticleSystem explosionPrefab;
+    [SerializeField] AudioClip deathSFX;    
+    [SerializeField] AudioClip[] shootSFX;
+    [Range(0f, 1f)] [SerializeField] float volumeDeathSFX = 0.4f;
+    [Range(0f, 1f)] [SerializeField] float volumeShootSFX = 0.4f;
 
     Coroutine firingCoroutine;
     
@@ -51,15 +58,18 @@ public class Player : MonoBehaviour
     }
 
     private void Die()
-    {
-        Debug.Log("Game Over");
+    {        
+        ParticleSystem vfx = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        vfx.Play();
+        Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, volumeDeathSFX);
     }
 
     private void Fire()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            firingCoroutine = StartCoroutine(FireContinuously());
+            firingCoroutine = StartCoroutine(FireContinuously());            
         }        
         if (Input.GetButtonUp("Fire1"))
         {
@@ -73,6 +83,7 @@ public class Player : MonoBehaviour
         {
             GameObject laserProjecile = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
             laserProjecile.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
+            AudioSource.PlayClipAtPoint(shootSFX[UnityEngine.Random.Range(0, shootSFX.Length)], Camera.main.transform.position, volumeShootSFX);
             yield return new WaitForSeconds(projectileFiringPeriod);
         }        
     }
