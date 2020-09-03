@@ -114,7 +114,7 @@ MonoBehaviour:
   health: 100
   scorePoints: 50
   projectilePrefab: {fileID: 6304117517249001056, guid: c7b4f1c2788fe3f4a800f85ccafc947d, type: 3}
-  minTimeBetweenShots: 0.2
+  minTimeBetweenShots: 0.5
   maxTimeBetweenShots: 1
   projectileSpeed: 10
   explosionPrefab: {fileID: 370860342961400294, guid: df2f45b671ebb3941830c3ad5d70167c, type: 3}

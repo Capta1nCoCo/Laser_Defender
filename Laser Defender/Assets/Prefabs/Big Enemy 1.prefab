@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
-  scorePoints: 300
+  scorePoints: 500
   projectilePrefab: {fileID: 6304117517249001056, guid: 61b7bd60bd60cfd44b1fb84ff05b5d9b, type: 3}
   minTimeBetweenShots: 1
   maxTimeBetweenShots: 3
