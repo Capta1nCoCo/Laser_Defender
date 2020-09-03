@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c3d051b5310bd409248968a0f9ef53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1200
+  health: 1000
   scorePoints: 600
   projectilePrefab: {fileID: 6304117517249001056, guid: df2978b3e6713a54d939d74b97a13063, type: 3}
   minTimeBetweenShots: 1
