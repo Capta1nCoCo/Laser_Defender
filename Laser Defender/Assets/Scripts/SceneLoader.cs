@@ -34,4 +34,9 @@ public class SceneLoader : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 }
