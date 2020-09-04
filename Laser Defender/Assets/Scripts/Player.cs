@@ -68,8 +68,7 @@ public class Player : MonoBehaviour
 
     private void Die()
     {        
-        ParticleSystem vfx = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        vfx.Play();
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);        
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, volumeDeathSFX);
         FindObjectOfType<SceneLoader>().LoadGameOver();

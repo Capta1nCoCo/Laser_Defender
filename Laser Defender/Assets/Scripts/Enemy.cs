@@ -76,10 +76,8 @@ public class Enemy : MonoBehaviour
     {
         FindObjectOfType<GameSession>().AddToScore(scorePoints);
         Destroy(gameObject);
-        ParticleSystem vfx = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, volumeDeathSFX);
-        vfx.Play();
-        
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, volumeDeathSFX);        
     }
 
 }
