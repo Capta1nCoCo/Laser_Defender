@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 
     [Header("Effects")]
     [SerializeField] ParticleSystem explosionPrefab;
+    [SerializeField] ParticleSystem impactVFX;
     [SerializeField] AudioClip deathSFX;    
     [SerializeField] AudioClip[] shootSFX;
     [Range(0f, 1f)] [SerializeField] float volumeDeathSFX = 0.4f;
@@ -59,6 +60,10 @@ public class Player : MonoBehaviour
         {
             Die();
         }
+        else
+        {
+            Instantiate(impactVFX, transform.position, Quaternion.identity);
+        }        
     }
 
     private void Die()
@@ -70,6 +75,7 @@ public class Player : MonoBehaviour
         FindObjectOfType<SceneLoader>().LoadGameOver();
     }
 
+    // PC Controls Legacy
     private void Fire()
     {
         if (Input.GetButtonDown("Fire1"))

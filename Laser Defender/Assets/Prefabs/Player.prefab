@@ -105,6 +105,7 @@ MonoBehaviour:
   projectileSpeed: 20
   projectileFiringPeriod: 0.07
   explosionPrefab: {fileID: 370860342961400294, guid: 077338fc3bf843140908d0f7fc8e598e, type: 3}
+  impactVFX: {fileID: 370860342961400294, guid: 17e222429eabd9c4585274d7c59f4ef2, type: 3}
   deathSFX: {fileID: 8300000, guid: 0e8477c2537874f45b730483bf9b28b2, type: 3}
   shootSFX:
   - {fileID: 8300000, guid: 78ccffcfefa47a349a9aae24b2aa9c59, type: 3}
