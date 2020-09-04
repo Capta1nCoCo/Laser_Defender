@@ -117,7 +117,8 @@ MonoBehaviour:
   minTimeBetweenShots: 1
   maxTimeBetweenShots: 3
   projectileSpeed: 3
-  explosionPrefab: {fileID: 370860342961400294, guid: df2f45b671ebb3941830c3ad5d70167c, type: 3}
+  explosionPrefab: {fileID: 370860342961400294, guid: 227b8d1d89f68fb46869982a8bac4d08, type: 3}
+  impactVFX: {fileID: 370860342961400294, guid: d2b38e219cef4354387802a6b6d7fd61, type: 3}
   shootSFX: {fileID: 8300000, guid: fc08598c7b096eb449186be9f280aa61, type: 3}
   deathSFX: {fileID: 8300000, guid: 219eebf98fe278a4eb6d8e73d158782b, type: 3}
   volumeShootSFX: 0.5

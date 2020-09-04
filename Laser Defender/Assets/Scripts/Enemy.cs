@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] float health = 100;
     [SerializeField] int scorePoints = 50;
     
-
     [Header("Shooting")]
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float minTimeBetweenShots = 0.2f;
@@ -19,6 +18,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Effects")]
     [SerializeField] ParticleSystem explosionPrefab;
+    [SerializeField] ParticleSystem impactVFX;
     [SerializeField] AudioClip shootSFX;    
     [SerializeField] AudioClip deathSFX;
     [Range(0f, 1f)] [SerializeField] float volumeShootSFX = 0.5f;
@@ -63,11 +63,13 @@ public class Enemy : MonoBehaviour
     private void ProcessHit(DamageDealer damageDealer)
     {
         health -= damageDealer.GetDamage();
-        damageDealer.ProcessHit();
+        damageDealer.ProcessHit();        
         if (health <= 0)
         {
             Die();
         }
+        if (impactVFX == null) { return; }
+        Instantiate(impactVFX, transform.position, Quaternion.identity);
     }
 
     private void Die()
